@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions
+ xmlns="http://schemas.xmlsoap.org/wsdl/"
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+ targetNamespace="http://siebel.com/CustomUI"
+ xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:tns="http://siebel.com/CustomUI"
+><types
+><xsd:schema
+ elementFormDefault="qualified"
+ attributeFormDefault="unqualified"
+ targetNamespace="http://siebel.com/CustomUI"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+><xsd:element
+ name="RunWSDLInboundInt_Input"
+><xsd:complexType
+><xsd:sequence
+><xsd:element
+ name="MethodName"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="ServiceName"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="inXML"
+ type="xsd:string"
+></xsd:element
+></xsd:sequence
+></xsd:complexType
+></xsd:element
+><xsd:element
+ name="RunWSDLInboundInt_Output"
+><xsd:complexType
+><xsd:sequence
+><xsd:element
+ name="Error_spcCode"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="Error_spcMessage"
+ type="xsd:string"
+></xsd:element
+><xsd:element
+ name="outXML"
+ type="xsd:string"
+></xsd:element
+></xsd:sequence
+></xsd:complexType
+></xsd:element
+></xsd:schema
+></types
+><message
+ name="RunWSDLInboundInt_Input"
+><part
+ name="RunWSDLInboundInt_Input"
+ element="tns:RunWSDLInboundInt_Input"
+></part
+></message
+><message
+ name="RunWSDLInboundInt_Output"
+><part
+ name="RunWSDLInboundInt_Output"
+ element="tns:RunWSDLInboundInt_Output"
+></part
+></message
+><portType
+ name="FEMI_spcWSDL_spcInbound_spcInt_spcWF"
+><operation
+ name="RunWSDLInboundInt"
+><input
+ message="tns:RunWSDLInboundInt_Input"
+></input
+><output
+ message="tns:RunWSDLInboundInt_Output"
+></output
+></operation
+></portType
+><binding
+ name="FEMI_spcWSDL_spcInbound_spcInt_spcWF"
+ type="tns:FEMI_spcWSDL_spcInbound_spcInt_spcWF"
+><soap:binding
+ transport="http://schemas.xmlsoap.org/soap/http"
+ style="document"
+></soap:binding
+><operation
+ name="RunWSDLInboundInt"
+><soap:operation
+ soapAction="document/http://siebel.com/CustomUI:RunWSDLInboundInt"
+></soap:operation
+><input
+><soap:body
+ use="literal"
+></soap:body
+></input
+><output
+><soap:body
+ use="literal"
+></soap:body
+></output
+></operation
+></binding
+><service
+ name="FEMIRunWSDLInboundInt"
+><port
+ binding="tns:FEMI_spcWSDL_spcInbound_spcInt_spcWF"
+ name="FEMI_spcWSDL_spcInbound_spcInt_spcWF"
+><soap:address
+ location="http://sblbck/femi_if/start.swe?SWEExtCmd=Execute&amp;SWEExtSource=SecureWebService&amp;SWEExtCmd=Execute"
+></soap:address
+></port
+></service
+></definitions
+>
